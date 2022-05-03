@@ -1,0 +1,142 @@
+@import "base/base";
+@import "abstracts/variables";
+
+  /* Page header */
+
+.header {
+    color: #000;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-pink-light;
+}
+
+   /* Navigation bar */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.2rem 0;
+
+
+    .logo {
+        display: flex;
+
+        &__image-container {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(to right, #373b44, #4286f4);
+            border-radius: 100%;
+            margin-right: 1rem;
+        }
+    
+        &__heading {
+            padding-top: .3rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+    }
+
+
+    &__list {
+        ul {
+            padding-top: .9rem;
+            display: flex;
+            font-size: 1.2rem;
+            font-weight: 500;
+            list-style-type: none;
+            cursor: pointer;
+
+            li {
+                margin-right: 3rem;
+            }
+
+        }
+        
+    }
+
+
+    &__action {
+        width: 10%;
+
+        a {
+            color: #fff;
+            letter-spacing: 1px;
+            padding: 1rem;
+            font-size: 1.4rem;
+            font-weight: 400;
+            background-color: $color-orange;
+            border-radius: 10px;
+        }
+
+        a:hover {
+            background-color: $color-pink-light;
+            color: $color-orange;
+            border: 1px solid $color-orange;
+        }
+
+    }
+}
+
+.header__content {
+    display: flex;
+    margin-top: 11rem;
+}
+
+.header__text-box {
+    margin-right: 8rem; 
+    width: 30%;
+
+
+    &-heading {
+        font-size: 6rem;
+        font-weight: bold;
+        white-space: pre-line;
+        margin-bottom: 2rem;
+
+        span {
+            color: $color-orange;
+        }
+
+    }
+
+    &-description {
+        color: #777;
+    }
+
+    &-action {
+        width: 40%;
+        margin: 2.5rem 0;
+
+        a {
+            color: #fff;
+            letter-spacing: 1px;
+            padding: 1rem;
+            font-size: 1.4rem;
+            font-weight: 400;
+            background-color: $color-orange;
+            border-radius: 10px;
+        }
+
+        a:hover {
+            background-color: $color-pink-light;
+            color: $color-orange;
+            border: 1px solid $color-orange;
+        }
+
+    }
+}
+
+.header__person-picture {
+    width: 50%;
+    height: 40rem;
+    background: linear-gradient(to bottom, #ee9ca7, #ffdde1);
+}
