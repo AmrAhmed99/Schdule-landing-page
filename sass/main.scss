@@ -1,7 +1,10 @@
 @import "base/base";
 @import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/utilities";
 
-  /* Page header */
+  /* HEADER SECTION */
+
 
 .header {
     color: #000;
@@ -17,8 +20,6 @@
     height: 100vh;
     background-color: $color-pink-light;
 }
-
-   /* Navigation bar */
 
 .nav {
     display: flex;
@@ -67,7 +68,7 @@
     &__action {
         width: 10%;
 
-        a {
+        a { // NEEDS IMPROVEMENTS
             color: #fff;
             letter-spacing: 1px;
             padding: 1rem;
@@ -77,7 +78,7 @@
             border-radius: 10px;
         }
 
-        a:hover {
+        a:hover {  // NEEDS IMPROVEMENTS
             background-color: $color-pink-light;
             color: $color-orange;
             border: 1px solid $color-orange;
@@ -86,7 +87,7 @@
     }
 }
 
-.header__content {
+.header__body {
     display: flex;
     margin-top: 11rem;
 }
@@ -94,7 +95,7 @@
 .header__text-box {
     margin-right: 8rem; 
     width: 30%;
-
+    min-width: 37.5rem;
 
     &-heading {
         font-size: 6rem;
@@ -109,14 +110,14 @@
     }
 
     &-description {
-        color: #777;
+        color: $color-gray;
     }
 
     &-action {
         width: 40%;
         margin: 2.5rem 0;
 
-        a {
+        a {  // NEEDS IMPROVEMENTS
             color: #fff;
             letter-spacing: 1px;
             padding: 1rem;
@@ -126,7 +127,7 @@
             border-radius: 10px;
         }
 
-        a:hover {
+        a:hover {  // NEEDS IMPROVEMENTS
             background-color: $color-pink-light;
             color: $color-orange;
             border: 1px solid $color-orange;
@@ -135,8 +136,152 @@
     }
 }
 
-.header__person-picture {
+.header__person-picture {  // Will change
     width: 50%;
     height: 40rem;
     background: linear-gradient(to bottom, #ee9ca7, #ffdde1);
+}
+
+/* MAIN SECTION */
+
+.main {
+    margin-top: 21.5rem;
+}
+
+.features {
+    &__header {
+        text-align: center;
+    }
+
+    &__badge {
+        display: inline-block;
+        @include badge;
+        text-transform: uppercase;
+        margin-bottom: .6rem;
+    }
+
+    &__heading {
+        font-size: 2.6rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        display: inline-block;
+        font-size: 1.2rem;
+        color: $color-gray;
+        width: 33%;
+    }
+
+    &__feature {
+        display: flex;
+        justify-content: space-between;
+        margin: 4rem auto 0;
+        width: 60%;
+    }
+
+    &__feature-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 22%;
+        text-align: center;
+
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 1.4rem;
+        }
+
+        p {
+            margin-top: 1rem;
+            color: lighten($color-gray, 10%);
+            font-size: 1.1rem;
+        }
+
+        
+    }
+
+    &__feature-icon-box {
+        width: 7rem;
+        height: 7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        
+        img {
+            width: 4rem;
+        }
+    
+
+    }
+
+    &__feature-icon-box:nth-child(3) {
+        img {
+            width: 3.2rem;
+        }
+    }
+    
+    &__feature-image-box {   // Will change
+        width: 50%;
+        height: 40rem;
+        background: linear-gradient(to right, #a8ff78, #78ffd6);
+        margin-left: -4rem;
+    }
+
+    &__feature-content-box {
+        width: 38.25%;
+        align-self: center;
+        
+        h4 {
+            font-size: 2.4rem;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: lighten($color-gray, 10%);
+            line-height: 1.8;
+            margin-top: .8rem;
+        }
+        
+        ul {
+            font-size: 1.3rem;
+            color: darken($color-gray, 40%);
+            margin-top: 1.7rem;
+            line-height: 2;
+        }
+        
+    }
+
+    &__feature--two {
+        margin-top: 13rem;
+    }
+
+    &__feature--three {
+        margin-top: 22rem;
+
+        .features__feature-image-box {
+            height: 28rem;
+        }
+
+        .features__feature-content-box {
+            width: 33%;
+            align-self: start;
+        }
+
+    }
+
+    &__feature--four {
+        margin: 17rem auto 10rem;
+
+        .features__feature-content-box {
+            width: 37%;
+        }
+    }
+
+
+
 }
