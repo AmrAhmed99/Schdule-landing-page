@@ -14,7 +14,8 @@ body {
   box-sizing: border-box;
   width: 88%;
   height: 100vh;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background-color: #fdfdfd; }
 
 .bg-orange-icon {
   background-color: #f99b80; }
@@ -128,7 +129,7 @@ body {
 .features__header {
   text-align: center; }
 
-.features__badge {
+.features__badge, .price__badge {
   display: inline-block;
   color: #f99b80;
   background-color: #ffefea;
@@ -138,12 +139,12 @@ body {
   text-transform: uppercase;
   margin-bottom: .6rem; }
 
-.features__heading {
+.features__heading, .price__heading {
   font-size: 2.6rem;
   font-weight: bold;
   margin-bottom: 1rem; }
 
-.features__description {
+.features__description, .price__description {
   display: inline-block;
   font-size: 1.2rem;
   color: #777;
@@ -219,6 +220,74 @@ body {
     align-self: start; }
 
 .features__feature--four {
-  margin: 17rem auto 10rem; }
+  margin: 17rem auto; }
   .features__feature--four .features__feature-content-box {
     width: 37%; }
+
+/* PRICE SECTION */
+.price {
+  text-align: center; }
+  .price__list {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin: 7rem auto 0;
+    width: 71%; }
+  .price__list-item {
+    padding: 4rem 7rem;
+    border: 1px solid #efe8e8;
+    border-radius: 10px;
+    box-shadow: 0px 26px 24px -12px black; }
+    .price__list-item h5 {
+      font-size: 1.6rem;
+      font-weight: bold; }
+    .price__list-item .price__icon {
+      display: block;
+      font-size: 2.5rem;
+      margin: 1.7rem 0; }
+    .price__list-item .price__number {
+      display: inline-block;
+      font-weight: bold;
+      font-size: 2.3rem;
+      margin-bottom: 3rem; }
+      .price__list-item .price__number span {
+        font-size: .9rem;
+        color: #f99b80; }
+    .price__list-item p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 3rem;
+      line-height: 1.8; }
+      .price__list-item p span {
+        color: #d0d0d0; }
+    .price__list-item button {
+      width: 120%;
+      letter-spacing: 1px;
+      color: #a5a5a5;
+      border-radius: 35px;
+      padding: .5rem 1.2rem;
+      border: 1px solid #e1dede;
+      margin-left: -.9rem; }
+      .price__list-item button img {
+        display: inline-block;
+        width: 12%;
+        margin-right: .6rem; }
+  .price__list-item--highlighted {
+    background-color: #fff;
+    box-shadow: 0px 26px 24px -12px black;
+    margin: 0 7rem;
+    border: none; }
+    .price__list-item--highlighted button {
+      border: none;
+      margin-left: -.9rem;
+      color: #fff;
+      letter-spacing: 1px;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 400;
+      background-color: #f99b80;
+      border-radius: 35px; }
+    .price__list-item--highlighted button:hover {
+      background-color: #ffefea;
+      color: #f99b80;
+      border: 1px solid #f99b80; }

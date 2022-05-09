@@ -68,20 +68,12 @@
     &__action {
         width: 10%;
 
-        a { // NEEDS IMPROVEMENTS
-            color: #fff;
-            letter-spacing: 1px;
-            padding: 1rem;
-            font-size: 1.4rem;
-            font-weight: 400;
-            background-color: $color-orange;
-            border-radius: 10px;
+        a {
+            @include button
         }
 
-        a:hover {  // NEEDS IMPROVEMENTS
-            background-color: $color-pink-light;
-            color: $color-orange;
-            border: 1px solid $color-orange;
+        a:hover {
+            @include button-hover
         }
 
     }
@@ -117,20 +109,12 @@
         width: 40%;
         margin: 2.5rem 0;
 
-        a {  // NEEDS IMPROVEMENTS
-            color: #fff;
-            letter-spacing: 1px;
-            padding: 1rem;
-            font-size: 1.4rem;
-            font-weight: 400;
-            background-color: $color-orange;
-            border-radius: 10px;
+        a {
+            @include button
         }
 
-        a:hover {  // NEEDS IMPROVEMENTS
-            background-color: $color-pink-light;
-            color: $color-orange;
-            border: 1px solid $color-orange;
+        a:hover {
+            @include button-hover
         }
 
     }
@@ -203,15 +187,15 @@
     }
 
     &__feature-icon-box {
-        width: 7rem;
-        height: 7rem;
+        width: 7rem;    // Needs improvements  // Be consistant
+        height: 7rem;   // Needs improvements
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 20px;
         
         img {
-            width: 4rem;
+            width: 4rem;  // Needs improvements  // Be consistant
         }
     
 
@@ -275,7 +259,7 @@
     }
 
     &__feature--four {
-        margin: 17rem auto 10rem;
+        margin: 17rem auto;
 
         .features__feature-content-box {
             width: 37%;
@@ -283,5 +267,107 @@
     }
 
 
+}
 
+/* PRICE SECTION */
+
+.price {  // I think needs improvements
+    text-align: center;
+
+    &__badge {
+        @extend .features__badge
+    }
+
+    &__heading {
+        @extend .features__heading;
+    }
+
+    &__description {
+        @extend .features__description;
+    }
+
+    &__list {
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        margin: 7rem auto 0;
+        width: 71%;
+    }
+
+    &__list-item {
+        padding: 4rem 7rem;
+        border: 1px solid #efe8e8;
+        border-radius: 10px;
+        box-shadow: 0px 26px 24px -12px rgb(0, 0, 0);
+
+        h5 {
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+
+        .price__icon {
+            display: block;
+            font-size: 2.5rem;
+            margin: 1.7rem 0;
+        }
+
+        .price__number {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 2.3rem;
+            margin-bottom: 3rem;
+
+            span  {
+                font-size: .9rem;
+                color: $color-orange;
+            }
+        }
+
+        p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            
+            span {
+                color: lighten($color-gray, 35%);
+            }
+        }
+
+        button {
+            width: 120%;
+            letter-spacing: 1px;
+            color: lighten($color-gray, 18%);
+            border-radius: 35px;
+            padding: .5rem 1.2rem;
+            border: 1px solid #e1dede;
+            margin-left: -.9rem;
+
+            img {
+                display: inline-block;
+                width: 12%;
+                margin-right: .6rem;
+            }
+
+        }
+
+    }
+
+    &__list-item--highlighted {
+        background-color: #fff;
+        box-shadow: 0px 26px 24px -12px rgb(0, 0, 0);
+        margin: 0 7rem;
+        border: none;
+
+        button {
+            border: none;
+            margin-left: -.9rem;
+            @include button(.9rem, .7rem 1.2rem, 35px);
+        }
+
+        button:hover {
+            @include button-hover;
+        }
+
+    }
 }
