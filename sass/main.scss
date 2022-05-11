@@ -133,6 +133,8 @@
 }
 
 .features {
+    margin-bottom: 17rem;
+
     &__header {
         text-align: center;
     }
@@ -259,7 +261,7 @@
     }
 
     &__feature--four {
-        margin: 17rem auto;
+        margin: 17rem auto 0;
 
         .features__feature-content-box {
             width: 37%;
@@ -273,6 +275,7 @@
 
 .price {  // I think needs improvements
     text-align: center;
+    margin-bottom: 17rem;
 
     &__badge {
         @extend .features__badge
@@ -369,5 +372,102 @@
             @include button-hover;
         }
 
+    }
+
+}
+
+/* TESTIMONIALS SECTION */
+
+.testimonials {
+    text-align: center;
+
+    &__badge {
+        @extend .features__badge
+    }
+
+    &__heading {
+        @extend .features__heading;
+    }
+
+    &__description {
+        @extend .features__description;
+    }
+
+    &__testimonial-list {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10rem;
+        position: absolute;
+        left: 0;
+        overflow-x: hidden;
+    }
+
+    &__item {
+        padding: 3.2rem 7rem 0;
+        border-radius: 15px;
+        background-color: lighten($color-gray, 49%);
+        font-size: 1.2rem;  
+    }
+
+    &__testimonial-image-box {
+        width: 15%;
+        margin: 0 auto;
+
+        img {
+            border-radius: 100%;
+        }
+    }
+    
+    h5 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin: 1.8rem 0 0;
+    }
+    
+    time {
+        color: lighten($color-gray, 25%);
+        margin: .2rem 0 .6rem;
+        display: inline-block;
+    }
+
+    &__testimonial-rate {
+        margin-bottom: .5rem;
+
+        span {
+            color: #f29938;
+        }
+
+    }
+
+    p {
+        color: lighten($color-gray, 10%);
+    }
+
+
+    &__item-one {
+        transform: translateX(-120px);
+    }
+
+    &__item-two {
+        background-color: #fff;
+        // font-size: 1.4rem;
+
+        // h5 {
+        //     font-size: 1.8rem;
+        // }
+        transform: scale(1.2);
+        transform-origin: 0 0;
+    }
+
+    &__item-three {
+        transform: translateX(120px);
+    }
+
+    .arrow-right {
+        @include arrow-icon(69%);
+    }
+
+    .arrow-left {
+        @include arrow-icon(29.5%);
     }
 }
