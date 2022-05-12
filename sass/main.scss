@@ -28,10 +28,10 @@
     padding: 3.2rem 0;
 
 
-    .logo {
+    &__logo {
         display: flex;
 
-        &__image-container {
+        &-image-container {
             width: 2.5rem;
             height: 2.5rem;
             background: linear-gradient(to right, #373b44, #4286f4);
@@ -39,7 +39,7 @@
             margin-right: 1rem;
         }
     
-        &__heading {
+        &-heading {
             padding-top: .3rem;
             font-size: 1.6rem;
             font-weight: 600;
@@ -380,9 +380,10 @@
 
 .testimonials {
     text-align: center;
+    margin-bottom: 50rem;
 
     &__badge {
-        @extend .features__badge
+        @extend .features__badge;
     }
 
     &__heading {
@@ -397,8 +398,8 @@
         display: flex;
         justify-content: space-between;
         margin-top: 10rem;
-        position: absolute;
-        left: 0;
+        // position: absolute;
+        // left: 0;
         overflow-x: hidden;
     }
 
@@ -470,4 +471,111 @@
     .arrow-left {
         @include arrow-icon(29.5%);
     }
+}
+
+/* FOOTER SECTION */
+
+.footer {
+    position: relative;
+    background-color: $color-pink-light;
+
+    .footer__app-download {
+        background-color: $color-orange;
+        position: absolute;
+        top: -145%;
+        padding: 4rem;
+        border-radius: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            width: 45%;
+            font-size: 3.7rem;
+            color: #fff;
+        }
+
+        a {
+            @include button(2.6rem, 1.2rem 2.5rem, 10px, #fff, #000);
+            margin-right: 8rem;
+            align-self: center;
+        }
+    }
+    
+    &__body {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__logo {
+        display: flex;
+        flex-wrap: wrap;
+        width: 18%;
+
+        &-image-container {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: linear-gradient(to right, #373b44, #4286f4);
+            border-radius: 100%;
+            margin-right: 1.3rem;
+        }
+    
+        &-heading {
+            padding-top: .3rem;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            color: $color-gray;
+            text-transform: capitalize;
+            width: 71.6%;
+            font-weight: 500;
+            margin-top: -4.3rem;
+        }
+
+    }
+
+    .footer__body-content {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 3rem;
+        width: 65%;
+
+    }
+
+    ul {
+        list-style-type: none;
+
+        p {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            color: $color-gray;
+            margin-bottom: 0.9rem;
+            font-weight: 500;
+        }
+
+        span {
+            font-size: 1.4rem;
+            background-color: $color-orange;
+            padding: 1rem 1.2rem;
+            border-radius: 12px;        
+            color: #fff;
+            margin: 3rem 0.5rem 0 0;
+        }
+    }
+
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-color: $color-pink-light;
 }

@@ -6,13 +6,13 @@
     padding: 0.4rem 1.2rem;
 }
 
-@mixin button($font-size: 1.4rem, $padding: 1rem, $border-radius: 10px) {
-    color: #fff;
+@mixin button($font-size: 1.4rem, $padding: 1rem, $border-radius: 10px, $background-color: #f99b80, $color: #fff) {
+    color: $color;
     letter-spacing: 1px;
     padding: $padding;
     font-size: $font-size;
     font-weight: 400;
-    background-color: #f99b80;
+    background-color: $background-color;
     border-radius: $border-radius;
 }
 
