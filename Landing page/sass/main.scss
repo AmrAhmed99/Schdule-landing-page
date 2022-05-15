@@ -1,0 +1,625 @@
+@import "base/base";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/utilities";
+
+/* ======================
+   HEADER SECTION
+   ====================== */
+
+.header {
+    color: #000;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-pink-light;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 0;
+
+
+    &__logo {
+        display: flex;
+
+        &-image-container {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(to right, #373b44, #4286f4);
+            border-radius: 100%;
+            margin-right: 1rem;
+        }
+    
+        &-heading {
+            font-size: 1.6rem;
+            margin: 0;
+            align-self: center;        
+            font-weight: 700;
+        }
+
+    }
+
+
+    &__list {
+        ul {
+            padding-top: .9rem;
+            display: flex;
+            font-size: 1.2rem;
+            font-weight: 600;
+            list-style-type: none;
+            cursor: pointer;
+
+            li {
+                margin-right: 3rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+
+        }
+        
+    }
+
+
+    &__action {
+        width: 11%;
+
+        a {
+            @include button
+        }
+
+        a:hover {
+            @include button-hover
+        }
+
+    }
+}
+
+.header__body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 11rem;
+}
+
+.header__text-box {
+    width: 33%;
+    min-width: 39.4rem;
+
+    &-heading {
+        font-size: 6rem;
+        font-weight: bold;
+        white-space: pre-line;
+        margin-bottom: 2rem;
+
+        span {
+            color: $color-orange;
+        }
+
+    }
+
+    &-description {
+        color: $color-gray;
+    }
+
+    &-action {
+        width: 40%;
+        margin: 2.5rem 0;
+
+        a {
+            @include button
+        }
+
+        a:hover {
+            @include button-hover
+        }
+
+    }
+}
+
+.header__person-picture {  // Will change
+    width: 50%;
+    height: 40rem;
+    margin-right: 4rem;
+    background: linear-gradient(to bottom, #ee9ca7, #ffdde1);
+}
+
+
+
+.main {                   /* MAIN TAG */
+    margin-top: 21.5rem;
+}
+
+/* ====================== 
+   FEATURES SECTION
+   ====================== */
+
+.features {
+    margin-bottom: 17rem;
+
+    &__header {
+        text-align: center;
+    }
+
+    &__badge {
+        display: inline-block;
+        @include badge;
+        text-transform: uppercase;
+        margin-bottom: .6rem;
+    }
+
+    &__heading {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1.2rem;
+    }
+
+    &__description {
+        display: inline-block;
+        font-size: 1.15rem;
+        color: $color-gray;
+        width: 33%;
+    }
+
+    &__feature {
+        display: flex;
+        justify-content: space-between;
+        margin: 4rem auto 0;
+        width: 84%;
+    }
+
+    &__feature-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 17%;
+        text-align: center;
+        line-height: 1.7;
+
+        h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 1.6rem;
+        }
+
+        p {
+            margin-top: 1rem;
+            color: lighten($color-gray, 10%);
+            font-size: 1.1rem;
+        }
+
+        
+    }
+
+    &__feature-icon-box {
+        width: 8rem;    // Needs improvements  // Be consistant
+        height: 8rem;   // Needs improvements
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 27px;
+        
+        img {
+            width: 4rem;  // Needs improvements  // Be consistant
+        }
+    
+
+    }
+
+    &__feature-icon-box:nth-child(3) {
+        img {
+            width: 3.2rem;
+        }
+    }
+    
+    &__feature-image-box {   // Will change
+        width: 50%;
+        height: 40rem;
+        background: linear-gradient(to right, #a8ff78, #78ffd6);
+        margin-left: -4rem;
+    }
+
+    &__feature-content-box {
+        width: 31%;
+        margin-right: 3rem;
+        align-self: center;
+        
+        h4 {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: $color-gray;
+            opacity: .8;
+            font-weight: 500;
+            line-height: 1.8;
+            margin-top: .8rem;
+        }
+        
+        ul {
+            font-size: 1.3rem;
+            color: darken($color-gray, 40%);
+            margin-top: 1.7rem;
+            line-height: 2;
+            list-style-type: none
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+        }
+
+        span {
+            background-color: $color-orange;
+            color: #fff;
+            border-radius: 100%;
+            padding: 0.3rem;
+            margin: 0 .8rem 0 -1.9rem;
+            font-size: .7rem;
+        }
+
+        // li::before {
+        //     content: "\2714";
+        //     background-color: $color-orange;
+        //     color: #fff;
+        //     border-radius: 100%;
+        //     padding: 0.2rem;
+        //     margin: 0 1rem 0 -1.9rem;
+        //     font-size: 1rem;
+        // }
+
+    }
+
+    &__feature--two {
+        margin-top: 13rem;
+    }
+
+    &__feature--three {
+        margin-top: 22rem;
+
+        .features__feature-image-box {
+            height: 28rem;
+        }
+
+        .features__feature-content-box {
+            align-self: start;
+            margin-left: 3rem;
+        }
+
+    }
+
+    &__feature--four {
+        margin: 17rem auto 0;
+    }
+
+
+}
+
+/* =====================
+   PRICE SECTION
+   ===================== */
+
+.price {  // I think needs improvements
+    text-align: center;
+    margin-bottom: 17rem;
+
+    &__badge {
+        @extend .features__badge
+    }
+
+    &__heading {
+        @extend .features__heading;
+    }
+
+    &__description {
+        @extend .features__description;
+    }
+
+    &__list {
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        margin: 7rem auto 0;
+        width: 80%;
+    }
+
+    &__list-item {
+        padding: 4rem 8rem;
+        border: 1px solid #efe8e8;
+        border-radius: 10px;
+
+        h5 {
+            font-size: 1.9rem;
+            font-weight: bold;
+        }
+
+        .price__icon {
+            display: block;
+            font-size: 3rem;
+            margin: 1.7rem 0;
+        }
+
+        .price__number {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 2.7rem;
+            margin-bottom: 3rem;
+
+            span  {
+                font-size: 1rem;
+                color: $color-orange;
+            }
+        }
+
+        p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            
+            span {
+                color: lighten($color-gray, 35%);
+            }
+        }
+
+        button {
+            width: 120%;
+            letter-spacing: 1px;
+            color: lighten($color-gray, 18%);
+            border-radius: 35px;
+            padding: 1rem 1.2rem;
+            border: 1px solid #e1dede;
+            margin-left: -.9rem;
+
+            span {
+                margin-right: 1rem;
+            }
+
+        }
+
+    }
+
+    &__list-item--highlighted {
+        background-color: #fff;
+        box-shadow: 3px 22px 19px -37px #000;
+        margin: 0 7rem;
+        border: none;
+
+        button {
+            border: none;
+            margin-left: -.9rem;
+            @include button(1rem, 1rem 1.2rem, 35px);
+        }
+
+        button:hover {
+            @include button-hover;
+        }
+
+    }
+
+}
+
+/* =========================
+   TESTIMONIALS SECTION
+   ========================= */
+
+.testimonials {
+    text-align: center;
+    margin-bottom: 60rem;
+
+    &__badge {
+        @extend .features__badge;
+    }
+
+    &__heading {
+        @extend .features__heading;
+    }
+
+    &__description {
+        @extend .features__description;
+    }
+
+    &__testimonial-list {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10rem;
+        position: absolute;
+        left: 0;
+    }
+
+    &__item {
+        padding: 3.2rem 7rem 0;
+        border-radius: 15px;
+        background-color: lighten($color-gray, 49%);
+        font-size: 1.2rem;  
+    }
+
+    &__testimonial-image-box {
+        width: 15%;
+        margin: 0 auto;
+
+        img {
+            border-radius: 100%;
+        }
+    }
+    
+    h5 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin: 1.8rem 0 0;
+    }
+    
+    time {
+        color: lighten($color-gray, 25%);
+        margin: .2rem 0 .6rem;
+        display: inline-block;
+    }
+
+    &__testimonial-rate {
+        margin-bottom: .5rem;
+
+        span {
+            color: #f29938;
+        }
+
+    }
+
+    p {
+        color: lighten($color-gray, 10%);
+    }
+
+    &__item-one {
+        transform: translateX(-120px);
+    }
+
+    &__item--highlighted {
+        background-color: #fff;
+        transform: scale(1.2);
+    }
+
+    &__item-three {
+        transform: translateX(120px);
+    }
+
+    .testimonials__action {
+        position: relative;
+    }
+
+    #arrow-right {
+        @include arrow-icon(76%);
+        z-index: 1;
+    }
+
+    #arrow-left {
+        @include arrow-icon(21%);
+        z-index: 1;
+    }
+}
+
+/* ======================= 
+   FOOTER SECTION
+   ======================= */
+
+.footer {
+    position: relative;
+    padding: 21rem 0 5rem;
+
+    .footer__app-download {
+        background-color: $color-orange;
+        position: absolute;
+        top: -21%;    
+        padding: 4rem;
+        border-radius: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            width: 46%;
+            font-size: 3.5rem;
+            color: #fff;
+        }
+
+        a {
+            @include button(2rem, 1.2rem 2.6rem, 10px, #fff, #000, 600);
+            margin-right: 8rem;
+            align-self: center;
+            text-transform: uppercase;
+        }
+    }
+    
+    &__body {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__logo {
+        display: flex;
+        flex-wrap: wrap;
+        width: 18%;
+
+        &-image-container {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: linear-gradient(to right, #373b44, #4286f4);
+            border-radius: 100%;
+            margin-right: 1.3rem;
+        }
+    
+        &-heading {
+            padding-top: .3rem;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            color: $color-gray;
+            text-transform: capitalize;
+            width: 75%;
+            font-weight: 500;
+            margin-top: -2.3rem;
+        }
+
+    }
+
+    .footer__body-content {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 3rem;
+        width: 65%;
+
+    }
+
+    ul {
+        list-style-type: none;
+
+        p {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            display: inline-block;
+            color: $color-gray;
+            margin-bottom: 0.9rem;
+            font-weight: 500;
+            font-size: 1.4rem;
+            text-decoration: none;
+        }
+
+        span {
+            font-size: 1.4rem;
+            background-color: $color-orange;
+            padding: 1rem 1.2rem;
+            border-radius: 12px;        
+            color: #fff;
+            margin: 3rem 0.5rem 0 0;
+        }
+    }
+
+}
+
+.footer::after {
+    content: '';
+    position: absolute;
+    top:0;
+    left: -10%;
+    z-index: -1;
+    width: 100vw;
+    height: 100%;
+    background-color: $color-pink-light;
+}
